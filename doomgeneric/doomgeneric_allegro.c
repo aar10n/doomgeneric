@@ -190,164 +190,164 @@ int DG_GetKey(int *pressed, unsigned char *doomKey)
 
 		switch (scancode) {
 		case  __allegro_KEY_RIGHT:
-			keyData = KEY_RIGHTARROW;
+			keyData = DOOM_KEY_RIGHTARROW;
 			break;
 
 		case  __allegro_KEY_LEFT:
-			keyData = KEY_LEFTARROW;
+			keyData = DOOM_KEY_LEFTARROW;
 			break;
 
 		case  __allegro_KEY_UP:
-			keyData = KEY_UPARROW;
+			keyData = DOOM_KEY_UPARROW;
 			break;
 
 		case  __allegro_KEY_DOWN:
-			keyData = KEY_DOWNARROW;
+			keyData = DOOM_KEY_DOWNARROW;
 			break;
 
 		case  __allegro_KEY_COMMA:
-			keyData = KEY_STRAFE_L;
+			keyData = DOOM_KEY_STRAFE_L;
 			break;
 
 		case  __allegro_KEY_STOP:
-			keyData = KEY_STRAFE_R;
+			keyData = DOOM_KEY_STRAFE_R;
 			break;
 
 		case  __allegro_KEY_SPACE:
-			keyData = KEY_USE;
+			keyData = DOOM_KEY_USE;
 			break;
 
 		case  __allegro_KEY_LCONTROL:
-			keyData = KEY_FIRE;
+			keyData = DOOM_KEY_FIRE;
 			break;
 
 		case  __allegro_KEY_ESC:
-			keyData = KEY_ESCAPE;
+			keyData = DOOM_KEY_ESCAPE;
 			break;
 
 		case  __allegro_KEY_ENTER:
-			keyData = KEY_ENTER;
+			keyData = DOOM_KEY_ENTER;
 			break;
 
 		case  __allegro_KEY_TAB:
-			keyData = KEY_TAB;
+			keyData = DOOM_KEY_TAB;
 			break;
 
 		case  __allegro_KEY_F1:
-			keyData = KEY_F1;
+			keyData = DOOM_KEY_F1;
 			break;
 
 		case  __allegro_KEY_F2:
-			keyData = KEY_F2;
+			keyData = DOOM_KEY_F2;
 			break;
 
 		case  __allegro_KEY_F3:
-			keyData = KEY_F3;
+			keyData = DOOM_KEY_F3;
 			break;
 
 		case  __allegro_KEY_F4:
-			keyData = KEY_F4;
+			keyData = DOOM_KEY_F4;
 			break;
 
 		case  __allegro_KEY_F5:
-			keyData = KEY_F5;
+			keyData = DOOM_KEY_F5;
 			break;
 
 		case  __allegro_KEY_F6:
-			keyData = KEY_F6;
+			keyData = DOOM_KEY_F6;
 			break;
 
 		case  __allegro_KEY_F7:
-			keyData = KEY_F7;
+			keyData = DOOM_KEY_F7;
 			break;
 
 		case  __allegro_KEY_F8:
-			keyData = KEY_F8;
+			keyData = DOOM_KEY_F8;
 			break;
 
 		case  __allegro_KEY_F9:
-			keyData = KEY_F9;
+			keyData = DOOM_KEY_F9;
 			break;
 
 		case  __allegro_KEY_F10:
-			keyData = KEY_F10;
+			keyData = DOOM_KEY_F10;
 			break;
 
 		case  __allegro_KEY_F11:
-			keyData = KEY_F11;
+			keyData = DOOM_KEY_F11;
 			break;
 
 		case  __allegro_KEY_F12:
-			keyData = KEY_F12;
+			keyData = DOOM_KEY_F12;
 			break;
 
 		case  __allegro_KEY_BACKSPACE:
-			keyData = KEY_BACKSPACE;
+			keyData = DOOM_KEY_BACKSPACE;
 			break;
 
 		case  __allegro_KEY_PAUSE:
-			keyData = KEY_PAUSE;
+			keyData = DOOM_KEY_PAUSE;
 			break;
 
 		case  __allegro_KEY_EQUALS:
-			keyData = KEY_EQUALS;
+			keyData = DOOM_KEY_EQUALS;
 			break;
 
 		case  __allegro_KEY_MINUS:
-			keyData = KEY_MINUS;
+			keyData = DOOM_KEY_MINUS;
 			break;
 
 		case  __allegro_KEY_LSHIFT:
 		case  __allegro_KEY_RSHIFT:
-			keyData = KEY_RSHIFT;
+			keyData = DOOM_KEY_RSHIFT;
 			break;
 
 		case  __allegro_KEY_RCONTROL:
-			keyData = KEY_RCTRL;
+			keyData = DOOM_KEY_RCTRL;
 			break;
 
 		case  __allegro_KEY_ALT:
-			keyData = KEY_RALT;
+			keyData = DOOM_KEY_RALT;
 			break;
 
 		case  __allegro_KEY_CAPSLOCK:
-			keyData = KEY_CAPSLOCK;
+			keyData = DOOM_KEY_CAPSLOCK;
 			break;
 
 		case  __allegro_KEY_NUMLOCK:
-			keyData = KEY_NUMLOCK;
+			keyData = DOOM_KEY_NUMLOCK;
 			break;
 
 		case  __allegro_KEY_SCRLOCK:
-			keyData = KEY_SCRLCK;
+			keyData = DOOM_KEY_SCRLCK;
 			break;
 
 		case  __allegro_KEY_PRTSCR:
-			keyData = KEY_PRTSCR;
+			keyData = DOOM_KEY_PRTSCR;
 			break;
 
 		case  __allegro_KEY_HOME:
-			keyData = KEY_HOME;
+			keyData = DOOM_KEY_HOME;
 			break;
 
 		case  __allegro_KEY_END:
-			keyData = KEY_END;
+			keyData = DOOM_KEY_END;
 			break;
 
 		case  __allegro_KEY_PGUP:
-			keyData = KEY_PGUP;
+			keyData = DOOM_KEY_PGUP;
 			break;
 
 		case  __allegro_KEY_PGDN:
-			keyData = KEY_PGDN;
+			keyData = DOOM_KEY_PGDN;
 			break;
 
 		case  __allegro_KEY_INSERT:
-			keyData = KEY_INS;
+			keyData = DOOM_KEY_INS;
 			break;
 
 		case  __allegro_KEY_DEL:
-			keyData = KEY_DEL;
+			keyData = DOOM_KEY_DEL;
 			break;
 
 		case  __allegro_KEY_0_PAD:
@@ -391,31 +391,31 @@ int DG_GetKey(int *pressed, unsigned char *doomKey)
 			break;
 
 		case  __allegro_KEY_SLASH_PAD:
-			keyData = KEYP_DIVIDE;
+			keyData = DOOM_KEYP_DIVIDE;
 			break;
 
 		case  __allegro_KEY_PLUS_PAD:
-			keyData = KEYP_PLUS;
+			keyData = DOOM_KEYP_PLUS;
 			break;
 
 		case  __allegro_KEY_MINUS_PAD:
-			keyData = KEYP_MINUS;
+			keyData = DOOM_KEYP_MINUS;
 			break;
 
 		case  __allegro_KEY_ASTERISK:
-			keyData = KEYP_MULTIPLY;
+			keyData = DOOM_KEYP_MULTIPLY;
 			break;
 
 		case  __allegro_KEY_DEL_PAD:
-			keyData = KEYP_PERIOD;
+			keyData = DOOM_KEYP_PERIOD;
 			break;
 
 		case  __allegro_KEY_EQUALS_PAD:
-			keyData = KEYP_EQUALS;
+			keyData = DOOM_KEYP_EQUALS;
 			break;
 
 		case  __allegro_KEY_ENTER_PAD:
-			keyData = KEYP_ENTER;
+			keyData = DOOM_KEYP_ENTER;
 			break;
 
 		default:

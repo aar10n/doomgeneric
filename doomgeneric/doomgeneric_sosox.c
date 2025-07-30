@@ -44,36 +44,36 @@ static unsigned char convert_to_doom_key(unsigned char scancode)
     {
     case 0x9C:
     case 0x1C:
-        key = KEY_ENTER;
+        key = DOOM_KEY_ENTER;
         break;
     case 0x01:
-        key = KEY_ESCAPE;
+        key = DOOM_KEY_ESCAPE;
         break;
     case 0xCB:
     case 0x4B:
-        key = KEY_LEFTARROW;
+        key = DOOM_KEY_LEFTARROW;
         break;
     case 0xCD:
     case 0x4D:
-        key = KEY_RIGHTARROW;
+        key = DOOM_KEY_RIGHTARROW;
         break;
     case 0xC8:
     case 0x48:
-        key = KEY_UPARROW;
+        key = DOOM_KEY_UPARROW;
         break;
     case 0xD0:
     case 0x50:
-        key = KEY_DOWNARROW;
+        key = DOOM_KEY_DOWNARROW;
         break;
     case 0x1D:
-        key = KEY_FIRE;
+        key = DOOM_KEY_FIRE;
         break;
     case 0x39:
-        key = KEY_USE;
+        key = DOOM_KEY_USE;
         break;
     case 0x2A:
     case 0x36:
-        key = KEY_RSHIFT;
+        key = DOOM_KEY_RSHIFT;
         break;
     case 0x15:
         key = 'y';

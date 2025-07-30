@@ -22,31 +22,31 @@ static unsigned char convertToDoomKey(unsigned char key)
 	switch (key)
 	{
 	case VK_RETURN:
-		key = KEY_ENTER;
+		key = DOOM_KEY_ENTER;
 		break;
 	case VK_ESCAPE:
-		key = KEY_ESCAPE;
+		key = DOOM_KEY_ESCAPE;
 		break;
 	case VK_LEFT:
-		key = KEY_LEFTARROW;
+		key = DOOM_KEY_LEFTARROW;
 		break;
 	case VK_RIGHT:
-		key = KEY_RIGHTARROW;
+		key = DOOM_KEY_RIGHTARROW;
 		break;
 	case VK_UP:
-		key = KEY_UPARROW;
+		key = DOOM_KEY_UPARROW;
 		break;
 	case VK_DOWN:
-		key = KEY_DOWNARROW;
+		key = DOOM_KEY_DOWNARROW;
 		break;
 	case VK_CONTROL:
-		key = KEY_FIRE;
+		key = DOOM_KEY_FIRE;
 		break;
 	case VK_SPACE:
-		key = KEY_USE;
+		key = DOOM_KEY_USE;
 		break;
 	case VK_SHIFT:
-		key = KEY_RSHIFT;
+		key = DOOM_KEY_RSHIFT;
 		break;
 	default:
 		key = tolower(key);

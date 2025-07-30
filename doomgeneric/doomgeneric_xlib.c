@@ -30,33 +30,33 @@ static unsigned char convertToDoomKey(unsigned int key)
 	switch (key)
 	{
     case XK_Return:
-		key = KEY_ENTER;
+		key = DOOM_KEY_ENTER;
 		break;
     case XK_Escape:
-		key = KEY_ESCAPE;
+		key = DOOM_KEY_ESCAPE;
 		break;
     case XK_Left:
-		key = KEY_LEFTARROW;
+		key = DOOM_KEY_LEFTARROW;
 		break;
     case XK_Right:
-		key = KEY_RIGHTARROW;
+		key = DOOM_KEY_RIGHTARROW;
 		break;
     case XK_Up:
-		key = KEY_UPARROW;
+		key = DOOM_KEY_UPARROW;
 		break;
     case XK_Down:
-		key = KEY_DOWNARROW;
+		key = DOOM_KEY_DOWNARROW;
 		break;
     case XK_Control_L:
     case XK_Control_R:
-		key = KEY_FIRE;
+		key = DOOM_KEY_FIRE;
 		break;
     case XK_space:
-		key = KEY_USE;
+		key = DOOM_KEY_USE;
 		break;
     case XK_Shift_L:
     case XK_Shift_R:
-		key = KEY_RSHIFT;
+		key = DOOM_KEY_RSHIFT;
 		break;
 	default:
 		key = tolower(key);

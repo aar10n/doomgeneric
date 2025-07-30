@@ -7,44 +7,6 @@
 #include "doomgeneric.h"
 #include "i_system.h"
 
-// XXX: HACK
-// Linux's input-event-codes.h and doomkeys.h have many collisions.
-// Redefine some of doomkeys.h's names here to work around this.
-// I could try to redefine Linux's... but that sounds incredibly
-// fragile, and is very likely not a good idea.
-#undef KEY_TAB
-#undef KEY_ENTER
-#undef KEY_BACKSPACE
-#undef KEY_MINUS
-#undef KEY_F1
-#undef KEY_F2
-#undef KEY_F3
-#undef KEY_F4
-#undef KEY_F5
-#undef KEY_F6
-#undef KEY_F7
-#undef KEY_F8
-#undef KEY_F9
-#undef KEY_F10
-#undef KEY_F11
-#define DOOM_KEY_TAB		9
-#define DOOM_KEY_ENTER		13
-#define DOOM_KEY_MINUS		0x2d
-#define DOOM_KEY_BACKSPACE	0x7f
-#define DOOM_KEY_F1		(0x80+0x3b)
-#define DOOM_KEY_F2		(0x80+0x3c)
-#define DOOM_KEY_F3		(0x80+0x3d)
-#define DOOM_KEY_F4		(0x80+0x3e)
-#define DOOM_KEY_F5		(0x80+0x3f)
-#define DOOM_KEY_F6		(0x80+0x40)
-#define DOOM_KEY_F7		(0x80+0x41)
-#define DOOM_KEY_F8		(0x80+0x42)
-#define DOOM_KEY_F9		(0x80+0x43)
-#define DOOM_KEY_F10		(0x80+0x44)
-#define DOOM_KEY_F11		(0x80+0x57)
-#define DOOM_KEY_F12		(0x80+0x58)
-
-
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -125,34 +87,34 @@ static unsigned char convertToDoomKey(unsigned int key){
 			key = DOOM_KEY_ENTER;
 			break;
 		case KEY_ESC:
-			key = KEY_ESCAPE;
+			key = DOOM_KEY_ESCAPE;
 			break;
 		case KEY_LEFT:
-			key = KEY_LEFTARROW;
+			key = DOOM_KEY_LEFTARROW;
 			break;
 		case KEY_RIGHT:
-			key = KEY_RIGHTARROW;
+			key = DOOM_KEY_RIGHTARROW;
 			break;
 		case KEY_UP:
-			key = KEY_UPARROW;
+			key = DOOM_KEY_UPARROW;
 			break;
 		case KEY_DOWN:
-			key = KEY_DOWNARROW;
+			key = DOOM_KEY_DOWNARROW;
 			break;
 		case KEY_LEFTCTRL:
 		case KEY_RIGHTCTRL:
-			key = KEY_FIRE;
+			key = DOOM_KEY_FIRE;
 			break;
 		case KEY_SPACE:
-			key = KEY_USE;
+			key = DOOM_KEY_USE;
 			break;
 		case KEY_LEFTSHIFT:
 		case KEY_RIGHTSHIFT:
-			key = KEY_RSHIFT;
+			key = DOOM_KEY_RSHIFT;
 			break;
 		case KEY_LEFTALT:
 		case KEY_RIGHTALT:
-			key = KEY_LALT;
+			key = DOOM_KEY_LALT;
 			break;
 		case KEY_F2:
 			key = DOOM_KEY_F2;
@@ -185,7 +147,7 @@ static unsigned char convertToDoomKey(unsigned int key){
 			key = DOOM_KEY_F11;
 			break;
 		case KEY_EQUAL:
-			key = KEY_EQUALS;
+			key = DOOM_KEY_EQUALS;
 			break;
 		case KEY_MINUS:
 			key = DOOM_KEY_MINUS;
@@ -496,7 +458,7 @@ int DG_GetKey(int* pressed, unsigned char* doomKey) {
 		s_KeyQueueReadIndex %= KEYQUEUE_SIZE;
 
 		*pressed = keyData >> 8;
-		*doomKey = keyData & 0xFF;
+		*doomkey = DOOM_KEYData & 0xFF;
 
 		return 1;
 	}
