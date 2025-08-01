@@ -37,7 +37,7 @@
 #undef HAVE_MEMORY_H
 
 /* Define to 1 if you have the `mmap' function. */
-#undef HAVE_MMAP
+#define HAVE_MMAP 1
 
 /* Define to 1 if you have the `sched_setaffinity' function. */
 #undef HAVE_SCHED_SETAFFINITY
@@ -55,13 +55,13 @@
 #define HAVE_STRING_H 1
 
 /* Define to 1 if you have the <sys/stat.h> header file. */
-#undef HAVE_SYS_STAT_H
+#define HAVE_SYS_STAT_H 1
 
 /* Define to 1 if you have the <sys/types.h> header file. */
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
-#undef HAVE_UNISTD_H
+#define HAVE_UNISTD_H 1
 
 /* Name of package */
 #define PACKAGE "Doom"
@@ -97,4 +97,4 @@
 #undef ORIGCODE
 
 /* Define to the directory where all game files are located */
-#define FILES_DIR "."
+#define FILES_DIR "/usr/share/games/doom/"
