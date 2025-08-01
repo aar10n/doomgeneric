@@ -39,6 +39,9 @@
 /* Define to 1 if you have the `mmap' function. */
 #define HAVE_MMAP 1
 
+/* Define to 1 if `mmap` should be used by default. */
+#define USE_DEFAULT_MMAP 1
+
 /* Define to 1 if you have the `sched_setaffinity' function. */
 #undef HAVE_SCHED_SETAFFINITY
 
