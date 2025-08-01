@@ -61,7 +61,7 @@ wad_file_t *W_OpenFile(char *path)
     //
 
 #ifdef USE_DEFAULT_MMAP
-    if (!M_CheckParm("-nommap"))
+    if (M_CheckParm("-nommap"))
     {
       return stdc_wad_file.OpenFile(path);
     }
