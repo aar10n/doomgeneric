@@ -28,7 +28,9 @@
 #include "config.h"
 #include "deh_main.h"
 #include "doomdef.h"
+#include "doomkeys.h"
 #include "doomstat.h"
+#include "doomgeneric.h"
 
 #include "dstrings.h"
 #include "doomfeatures.h"
@@ -61,6 +63,7 @@
 #include "g_game.h"
 
 #include "hu_stuff.h"
+#include "hu_lib.h"
 #include "wi_stuff.h"
 #include "st_stuff.h"
 #include "am_map.h"
@@ -92,6 +95,14 @@ char *          savegamedir;
 // location of IWAD and WAD files
 
 char *          iwadfile;
+
+// FPS display variables
+hu_textline_t   fps_textline;
+boolean         showfps = false;
+int             fps_current = 0;
+static uint32_t fps_frame_times[60]; // buffer for 
+static uint32_t fps_frame_index = 0;
+static uint32_t fps_last_time = 0;
 
 
 boolean		devparm;	// started game with -devparm
@@ -146,6 +157,13 @@ void D_ProcessEvents (void)
 	
     while ((ev = D_PopEvent()) != NULL)
     {
+        // check for FPS toggle key
+        if (ev->type == ev_keydown && ev->data1 == DOOM_KEY_BACKTICK)
+        {
+            showfps = !showfps;
+            continue;  // consume the event
+        }
+
 	if (M_Responder (ev))
 	    continue;               // menu ate the event
 	G_Responder (ev);
@@ -402,6 +420,42 @@ boolean D_GrabMouseCallback(void)
     return (gamestate == GS_LEVEL) && !demoplayback && !advancedemo;
 }
 
+//
+// D_UpdateFPS
+// Calculate current FPS using rolling average
+//
+void D_UpdateFPS(void)
+{
+    uint32_t current_time = DG_GetTicksMs();
+    uint32_t frame_time;
+    uint32_t i, total_time;
+
+    if (fps_last_time == 0)
+    {
+        fps_last_time = current_time;
+        return;
+    }
+
+    frame_time = current_time - fps_last_time;
+    fps_last_time = current_time;
+
+    // store frame time in circular buffer
+    fps_frame_times[fps_frame_index] = frame_time;
+    fps_frame_index = (fps_frame_index + 1) % 60;
+
+    // calculate average FPS over last 60 frames
+    total_time = 0;
+    for (i = 0; i < 60; i++)
+    {
+        total_time += fps_frame_times[i];
+    }
+
+    if (total_time > 0)
+    {
+        fps_current = (int)((60 * 1000) / total_time);
+    }
+}
+
 void doomgeneric_Tick()
 {
     // frame syncronous IO operations
@@ -410,6 +464,9 @@ void doomgeneric_Tick()
     TryRunTics (); // will run at least one tic
 
     S_UpdateSounds (players[consoleplayer].mo);// move positional sounds
+
+    // Update FPS counter
+    D_UpdateFPS();
 
     // Update display, next frame, with current state.
     if (screenvisible)

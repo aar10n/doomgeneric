@@ -93,6 +93,9 @@ static unsigned char convertToDoomKey(unsigned int key){
     case SDLK_MINUS:
       key = DOOM_KEY_MINUS;
       break;
+    case SDLK_BACKQUOTE:
+      key = DOOM_KEY_BACKTICK;
+      break;
     default:
       key = tolower(key);
       break;

@@ -41,6 +41,11 @@
 #include "dstrings.h"
 #include "sounds.h"
 
+#include "d_main.h"
+
+// FPS display
+extern hu_textline_t fps_textline;
+
 //
 // Locally used constants, shortcuts.
 //
@@ -331,6 +336,13 @@ void HU_Start(void)
 		       HU_TITLEX, HU_TITLEY,
 		       hu_font,
 		       HU_FONTSTART);
+
+    // create the FPS display widget
+    HUlib_initTextLine(&fps_textline,
+           SCREENWIDTH - 50, 5,  // top-right corner
+           hu_font,
+           HU_FONTSTART);
+
     
     switch ( logical_gamemission )
     {
@@ -380,6 +392,26 @@ void HU_Start(void)
 
 }
 
+void HU_UpdateFPS(void)
+{
+    char fps_text[20];
+    char* s;
+    
+    if (!showfps)
+        return;
+        
+    // Clear the textline
+    HUlib_clearTextLine(&fps_textline);
+    
+    // Format FPS string
+    sprintf(fps_text, "FPS: %d", fps_current);
+    
+    // Add characters to textline
+    s = fps_text;
+    while (*s)
+        HUlib_addCharToTextLine(&fps_textline, *(s++));
+}
+
 void HU_Drawer(void)
 {
 
@@ -387,6 +419,13 @@ void HU_Drawer(void)
     HUlib_drawIText(&w_chat);
     if (automapactive)
 	HUlib_drawTextLine(&w_title, false);
+
+    // Draw FPS if enabled
+    if (showfps)
+    {
+        HU_UpdateFPS();
+        HUlib_drawTextLine(&fps_textline, false);
+    }
 
 }
 

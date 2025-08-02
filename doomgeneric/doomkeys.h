@@ -53,6 +53,7 @@
 
 #define DOOM_KEY_EQUALS	    0x3d
 #define DOOM_KEY_MINUS	    0x2d
+#define DOOM_KEY_BACKTICK   0x60
 
 #define DOOM_KEY_RSHIFT	    (0x80+0x36)
 #define DOOM_KEY_RCTRL	    (0x80+0x1d)

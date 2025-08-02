@@ -45,6 +45,10 @@ void D_StartTitle (void);
 
 extern  gameaction_t    gameaction;
 
+// FPS display
+extern boolean showfps;
+extern int fps_current;
+
 
 #endif
 
